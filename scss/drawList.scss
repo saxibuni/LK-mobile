@@ -1,0 +1,43 @@
+
+#drawList{
+  padding-bottom: 2rem;
+  li{
+    overflow: hidden;
+    a{
+      display: block;
+      height: 4rem;
+      background-repeat: no-repeat;
+      background-size:contain;
+      background-position: 0.8rem center;
+      div{
+        border-bottom:1px solid #e4e4e4;
+        margin-left:5.5rem;
+        height: 4rem;
+        .market{
+          font-size: 1rem;
+          color: #4d4d4d;
+          height: 2rem;
+          line-height: 2rem;
+          font-weight: 600;
+          margin-top: 1rem;
+        }
+        .draw{
+          font-size: 0.833333rem;
+          color: #6879b5;
+          height: 2rem;
+          line-height: 1.8rem;
+          em{
+            float: right;
+            color: #e73247;
+            font-size: 0.833333rem;
+            width: 9rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  .liDisabled{
+    background: linear-gradient(to bottom, rgba(233, 233, 231, 0.26), rgba(232, 233, 233, 0.65));
+  }
+}

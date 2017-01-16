@@ -1,0 +1,75 @@
+
+<ion-view>
+  <ion-header-bar class="bar-dark" id="mainHead">
+    <a nav-direction="back" class="backA button button-clear ion-chevron-left" ng-click="goBack()"></a>
+    <h1 class="title">投注详情</h1>
+    <a class="button button-clear" ng-click="views.backBet()" ng-if="betInfo.betState == '待开奖'">撤单</a>
+  </ion-header-bar>
+  <ion-content id="mainContent" style="padding-bottom: 1rem;background: #ffffff;bottom: 0;">
+    <div id="betDetail">
+      <div class="chaseDetail_top">
+        <img ng-src="{{views.imgUrl}}"/>
+        <div>
+          <p class="bet_market">{{views.marketName}}</p>
+          <p class="bet_issue">第{{betInfo.drawNumber || betInfo.item.drawNumber}}期</p>
+        </div>
+      </div>
+      <ul class="chaseDetail_menu">
+        <li>
+          订单状态
+          <p ng-if="betInfo.betState.indexOf('元')>-1" class="happy">
+            {{betInfo.betState}}
+          </p>
+          <p ng-if="betInfo.betState.indexOf('元')== -1" ng-class="views.betClass[betInfo.betState]">{{ betInfo.betState}}</p>
+        </li>
+        <li>
+          订单编号
+          <p>
+            {{betInfo.item.ticketId || betInfo.ticketId}}
+          </p>
+        </li>
+        <li>
+          注号时间
+          <p>
+            {{betInfo.betTime}}
+          </p>
+        </li>
+        <li>
+          开奖号码
+          <p>
+            {{views.happyNumber}}
+          </p>
+        </li>
+        <li>
+          游戏玩法
+          <p>
+            {{betInfo.betName}}
+          </p>
+        </li>
+        <li>
+          倍数
+          <p>
+            {{betInfo.item.multiple || betInfo.multiple}}
+          </p>
+        </li>
+        <li>
+          奖金组及返点
+          <p>
+            {{views.ItemGroups}}
+          </p>
+        </li>
+        <li>
+          投注金额
+          <p>
+            {{betInfo.item.betAmount.toFixed(2) || betInfo.betAmount.toFixed(2)}}元
+          </p>
+        </li>
+        <li>
+          投注内容
+        </li>
+        <li class="li_txt" ng-bind-html="views.betContent">
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

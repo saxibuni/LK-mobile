@@ -1,0 +1,150 @@
+.lhh{
+  .listUL{
+    width: 100%;
+    .disable-pointer-events {
+      span{
+        position: absolute;
+        pointer-events: none;
+        margin-left: -8px;
+        margin-top: -10px;
+      }
+    }
+    .ballContent{
+      .listTop{
+        background-color: #fafafa;
+        height: 2.5rem;
+        padding: 0 0.5rem;
+        overflow: hidden;
+        border-top: 1px solid #e4e4e4;
+        .ballNumber{
+          line-height: 2.5rem;
+          font-size: 1.2rem;
+          color: #464646;
+          float: left;
+          height: 2.5rem;
+          width: 6rem;
+        }
+        .ballType{
+          line-height: 2.5rem;
+          font-size: 0.9rem;
+          color: #9d9d9d;
+          float: left;
+          span{
+            width: 3rem;
+            float: left;
+            text-align: center;
+            cursor: pointer;
+          }
+        }
+        .clear{
+          border-radius: 1rem;
+          font-size: 0.92rem;
+          color: #6879b5;
+          background-color: #fff;
+          text-align: center;
+          float: right;
+          border: 1px solid #e4e4e4;
+          width: 4.5rem;
+          height: 2rem;
+          line-height: 1.85rem;
+          margin-top: 0.25rem;
+        }
+        .clear:active{
+          background-color: #6879b5 !important;
+          color: #ffffff !important;
+          transition: 0.5s;
+        }
+      }
+      .ListBottom{
+        overflow: hidden;
+        border-top: 1px solid #e4e4e4;
+        .listLeft{
+          border-right: 1px solid #eee;
+          float: left;
+          width: 85%;
+          .list6{
+            overflow: hidden;
+            li{
+              margin-top: 0.8rem;
+              width: 3.5rem;
+              height: 3.5rem;
+              line-height: 3.5rem;
+              border: 0.1rem solid #e7e9f3;
+              text-align: center;
+              border-radius: 50%;
+              display: inline-block;
+              color: #6879b5;
+              margin-left: 0.85rem;
+              margin: 0.4rem 0.5rem;
+              cursor: pointer;
+            }
+          }
+        }
+        .random_select{
+          float: right;
+          font-size: 1.2rem;
+          color: #6879b5;
+          border: 1px solid #e4e4e4;
+          width: 2.4rem;
+          text-align: center;
+          height: 7rem;
+          line-height: 2.5rem;
+          margin-top: 0.8rem;
+          margin-right: 0.6rem;
+          border-radius: 0.1rem;
+          padding: 1rem 0;
+          cursor: pointer;
+        }
+        .random_select:active{
+          background-color: #6879b5 !important;
+          color: #ffffff !important;
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+  .listUL5{
+    .ballContent{
+      height: 8.375rem !important;
+    }
+    .list4{
+      width: 100%;
+      li{
+        margin-top: 1rem;
+        float: left;
+        margin-left: 3.7rem;
+        width: 4.17rem;
+        height: 4.17rem;
+        text-align: center;
+        line-height: 4.07rem;
+        border-radius: 50%;
+       /* border: 0.1rem solid #e7e9f3;*/
+        color: #6879b5;
+        font-size: 1.4rem;
+        background-size:100% 100% ;
+      }
+      li:nth-child(1){
+        background-image:url("../img/icon_long.png") ;
+      }
+      li:nth-child(1).selected-ball{
+        background-image:url("../img/icon_longYes.png") ;
+        color:#ffffff;
+      }
+      li:nth-child(2){
+        background-image:url("../img/icon_hu.png") ;
+      }
+      li:nth-child(2).selected-ball{
+        background-image:url("../img/icon_huYes.png") ;
+        color:#ffffff;
+      }
+      li:nth-child(3){
+        background-image:url("../img/icon_he.png") ;
+      }
+      li:nth-child(3).selected-ball{
+        background-image:url("../img/icon_heYes.png") ;
+        color:#ffffff;
+      }
+    }
+  }
+
+}

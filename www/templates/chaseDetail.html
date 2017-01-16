@@ -1,0 +1,79 @@
+
+<ion-view>
+  <ion-header-bar class="bar-dark" id="mainHead">
+    <a nav-direction="back" class="backA button button-clear ion-chevron-left" ng-click="goBack()"></a>
+    <h1 class="title">追号详情</h1>
+    <a class="button button-clear icon" ng-click="backChase()" ng-if="canStop == true">撤单</a><!---->
+  </ion-header-bar>
+  <ion-content id="mainContent" style="padding-bottom: 1rem;background: #ffffff;bottom:0;">
+    <div id="chaseDetail">
+      <div class="chaseDetail_top">
+        <img ng-src="{{views.imgUrl}}"/>
+        <div>
+          <p class="bet_market">{{views.marketName}}</p>
+          <p class="bet_issue">第{{chaseInfo.drawNumber}}期</p>
+        </div>
+      </div>
+      <ul class="chaseDetail_menu">
+        <li>
+          订单状态
+          <p class="num_blue">
+            {{chaseInfo.finishedDraw}}/{{chaseInfo.totalDraw}}
+          </p>
+        </li>
+        <li>
+          订单编号
+          <p>
+            {{chaseInfo.chaseId}}
+          </p>
+        </li>
+        <li>
+          注号时间
+          <p>
+            {{chaseInfo.betTime}}
+          </p>
+        </li>
+        <li>
+          开奖号码
+          <p>
+            {{views.happyNumber}}
+          </p>
+        </li>
+        <li>
+          游戏玩法
+          <p>
+            {{chaseInfo.betName}}
+          </p>
+        </li>
+        <li>
+          奖金组及返点
+          <p>
+            {{views.ItemGroups}}
+          </p>
+        </li>
+        <li>
+          追中即停
+          <p ng-if="chaseInfo.stopUtilWin == true">
+              是
+          </p>
+          <p ng-if="chaseInfo.stopUtilWin == false">
+            否
+          </p>
+        </li>
+        <li>
+          投注金额
+          <p>
+            {{chaseInfo.betAmount.toFixed(2)}}元
+          </p>
+        </li>
+        <li ng-repeat="item in chaseList" class="chaseDetail_betList" ng-click="goMyDetail.goBet({item:item,ItemGroups:views.ItemGroups,betName:chaseInfo.betName,betTime:chaseInfo.betTime,betState:item.state,imgUrl:views.imgUrl,market:views.market})"><!--ng-click="goMyDetail.goBet(item)"-->
+          {{item.drawNumber}}期，&nbsp;<span class="num_blue">{{item.multiple}}</span>倍，&nbsp;投注<span class="num_blue">{{Common.addDotToNumber(item.betAmount)}}</span>元
+          <!--<p ng-class='views.chaseClass[item.state]'>{{item.state}}</p>-->
+          <p ng-if="item.state.indexOf('元')>-1" class="happy">{{item.state}}</p>
+          <p  ng-if="item.state.indexOf('元')== -1 && item.state != '待开奖'" ng-class='views.chaseClass[item.state]'>{{item.state}}</p>
+          <p  ng-if="item.state.indexOf('元')== -1 && item.state == '待开奖'" class='doBack' ng-click="backBet(item,$event,$index)">撤单</p>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

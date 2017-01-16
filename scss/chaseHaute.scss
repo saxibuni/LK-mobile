@@ -1,0 +1,73 @@
+
+#chaseHaute{
+  .chaseHaute_top{
+    text-align: center;
+    border-bottom: 1px solid #e4e4e4;
+    padding:0.416666rem 0px;
+    .chaseHaute_top_issue{
+      font-size: 1.25rem;
+      color: #6879b5;
+    }
+    .chaseHaute_top_stop{
+      font-size:0.91666rem;
+      color: #a5a8b5;
+      margin:0.42rem 0px;
+    }
+    .chaseHaute_top_end{
+      font-size:0.91666rem;
+      color: #e73247;
+    }
+  }
+  .chaseHaute_tab{
+    width:100%;
+    tr{
+      border-bottom: 1px solid #e4e4e4;
+      th{
+        font-size: 1rem;
+        color:#3a3a3a;
+        background: #fafafa;
+        line-height: 2rem;
+      }
+      td{
+        font-size: 0.8333rem;
+        color: #888888;
+        line-height: 1.875rem;
+        text-align: center;
+      }
+      td:nth-child(5){
+        color:#6879b5;
+       }
+    }
+  }
+}
+#chaseHaute_bottom{
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  border-top: 1px solid #e4e4e4;
+  background: #fff;
+  .calculateSum,.calculateBalance{
+    font-size: 0.91666rem;
+    margin:0.41666rem;
+    color: #000000;
+    span{
+      color:#6879b5;
+    }
+    em{
+      color:#e73247;
+    }
+  }
+  .betSure{
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+    height: 2.583333rem;
+    line-height: 2.583333rem;
+    background: #e73247;
+    cursor: pointer;
+  }
+
+
+
+}

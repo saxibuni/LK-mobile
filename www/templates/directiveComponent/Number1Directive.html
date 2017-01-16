@@ -1,0 +1,25 @@
+<ul class="listUL">
+    <li ng-repeat="item in dataList track by $index" class="ballContent">
+        <div class="listTop">
+            <div class="ballNumber">
+                <span>{{item}}</span>
+            </div>
+            <div class="ballType" ng-if="operations[$index] != false">
+                <span ng-click="views.selectOperateBall($index,views.numberArr)" ng-class="{'selected-item':betRuleInstance.result[$index].eqaul(views.numberArr)}">全</span>
+                <span ng-click="views.selectOperateBall($index,views.bigNumArr)" ng-class="{'selected-item':betRuleInstance.result[$index].eqaul(views.bigNumArr)}">大</span>
+                <span ng-click="views.selectOperateBall($index,views.smallNumArr)" ng-class="{'selected-item':betRuleInstance.result[$index].eqaul(views.smallNumArr)}">小</span>
+                <span ng-click="views.selectOperateBall($index,views.oddNumberArr)" ng-class="{'selected-item':betRuleInstance.result[$index].eqaul(views.oddNumberArr)}">单</span>
+                <span ng-click="views.selectOperateBall($index,views.evenNumberArr)" ng-class="{'selected-item':betRuleInstance.result[$index].eqaul(views.evenNumberArr)}">双</span>
+            </div>
+            <button class=" clear" ng-click="views.removeBall($index)" ng-if="operations[$index] != false">清除</button>
+        </div>
+        <div class="ListBottom">
+            <div class="listLeft" ng-class="{'wth':operations[$index] == false}">
+                <ul class="list6">
+                    <li ng-repeat="ball in ballList track by $index" ng-click="selectBall(ball,$parent.$index)" ng-class="{'selected-ball':betRuleInstance.result[$parent.$index].indexOf(ball.toString()) >=0}"><span>{{ball}}</span></li>
+                </ul>
+            </div>
+            <em class="random_select" ontouchstart="" onmouseover="" ng-click="randomBall($index,ballList)" ng-if="operations[$index] != false">机选</em>
+        </div>
+    </li>
+</ul>

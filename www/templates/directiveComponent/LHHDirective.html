@@ -1,0 +1,14 @@
+<ul class="listUL listUL5">
+  <li class="ballContent" ng-repeat="item in dataList track by $index">
+    <div class="listTop">
+      <div class="tx ballNumber">
+        <span>{{item}}</span>
+      </div>
+    </div>
+    <div class="ListBottom">
+      <ul class="list4">
+        <li ng-repeat="ball in ballList track by $index" ng-class="{'selected-ball':betRuleInstance.result[$parent.$index].indexOf(ball[1].toString()) >= 0}" ng-click="selectBall(ball[1],$parent.$index)">{{ball[0]}}</li>
+      </ul>
+    </div>
+  </li>
+</ul>

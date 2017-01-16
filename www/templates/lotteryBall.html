@@ -1,0 +1,29 @@
+<ion-view>
+  <ion-header-bar class="bar-dark" id="mainHead">
+    <a nav-direction="back" class="backA button button-clear ion-chevron-left" ng-click="goBack()"></a>
+    <h1 class="title">{{theMarket.marketCNName}}</h1>
+  </ion-header-bar>
+  <ion-content id="mainContent" style="bottom:0;">
+    <div id="lotteryBall" >
+      <ul>
+        <div ng-repeat="item in items track by $index">
+         <!-- <p class="trends_market" >
+            <span class="market">{{item.marketName}}</span>
+          </p>-->
+          <ul>
+            <li ng-repeat="arr in item.list track by $index">
+              <p>第{{arr.drawNoStart}}-{{arr.drawNoEnd}} 期</p>
+              <div ng-if ="arr.result.length ==5">
+                <span class="kono"  ng-repeat="result in arr.result track by $index">{{result}}</span>
+              </div>
+              <div ng-if ="arr.result.length ==3" >
+                <span style="background-image: url('img/common/s-dice-{{result}}.png')" class="k3d" ng-repeat="result in arr.result track by $index"></span>
+                <em class="sum">和值:{{arr.sum}}</em>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

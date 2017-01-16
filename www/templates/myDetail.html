@@ -1,0 +1,98 @@
+
+<ion-view>
+  <ion-header-bar style="height:14.25rem;padding: 0;">
+    <div id="subheader">
+      <div class="subheader_user">
+        <img class="head_img" ng-src="img/person.jpg"/>
+        <p class="currency">资产总值(元)</p>
+        <p class="balance">{{Common.addDotToNumber(balance,4)}}</p>
+      </div>
+      <div class="subheader_tab" >
+        <p ng-class="{'selected':uiShow}" ng-click="betHistory.showBet($event)">投注记录</p>
+        <p ng-class="{'selected':!uiShow}" ng-click="chaseHistory.showChase($event)">追号记录</p>
+      </div>
+
+    </div>
+  </ion-header-bar>
+
+
+  <!--投注记录-->
+  <div ng-if="uiShow == true && resultArrBet.length > 0">
+    <ion-content style="top:14.25rem;background: #ffffff;">
+      <ion-refresher  on-refresh="do_refresh(1)"></ion-refresher>
+      <ul class="my_history_list">
+        <li ng-repeat="re in resultArrBet" ng-if = "re.length > 0">
+          <p class="monthTitle" ng-click="toggleList($index,1)">
+            {{re.year}}{{re.month}}月
+            <i class="ion-chevron-down"></i>
+          </p>
+          <ul ng-if="re.isToggle == true">
+            <li ng-click="goMyDetail.goBet(bet)" ng-repeat="bet in re"><!--views.goBetDetail(bet)-->
+              <em ng-if="bet.betState.indexOf('元')>-1" class="happy">{{bet.betState}}</em>
+              <em  ng-if="bet.betState.indexOf('元')== -1" ng-class='views.betClass[bet.betState]'>{{bet.betState}}</em>
+              <img  class="betImg" ng-src="{{bet.betImg}}"/>
+              <div class="info">
+                <p>
+                  <span class="betType">{{bet.betName}}</span>
+                  <span class="betMoney">{{bet.betAmount.toFixed(2)}}元</span>
+                </p>
+                <p>
+                  <span class="date">{{bet.betMonth}}月{{bet.betDay}}日</span>
+                  <span class="time"> {{bet.betTime}}</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ion-infinite-scroll ng-if="moreBet&&resultArrBet[0].length>9" on-infinite="load_more('1');">
+      </ion-infinite-scroll>
+    </ion-content>
+
+  </div>
+  <div ng-if="uiShow == true && resultArrBet.length == 0">
+    <ion-content style="top:14.25rem;background-color: #ffffff;" class="no_bet_records"></ion-content>
+  </div>
+
+  <!--追号记录-->
+  <div ng-if="uiShow == false &&resultArrChase.length >0">
+    <ion-content style="top:14.25rem;background: #ffffff;">
+      <ion-refresher  on-refresh="do_refresh(2)"></ion-refresher>
+      <ul  class="my_history_list">
+        <li ng-repeat="ch in resultArrChase" ng-if = "ch.length > 0">
+          <p class="monthTitle">
+            {{ch.year}}{{ch.month}}月
+            <i class="ion-chevron-down" ng-click="toggleList($index,2)"></i>
+          </p>
+          <ul ng-if="ch.isToggle == true">
+            <li ng-click="goMyDetail.goChase(chase)" ng-repeat="chase in ch">
+              <em class="alreadyStar">{{chase.finishedDraw}}/{{chase.totalDraw}}</em>
+              <img  class="betImg" ng-src="{{chase.betImg}}"/>
+              <div class="info">
+                <p>
+                  <span class="betType">{{chase.betName}}</span>
+                  <span class="betMoney">{{chase.betAmount.toFixed(2)}}元</span>
+                </p>
+                <p>
+                  <span class="date">{{chase.betMonth}}月{{chase.betDay}}日</span>
+                  <span class="time"> {{chase.betTime}}</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ion-infinite-scroll ng-if="moreChase&&resultArrChase[0].length>9" on-infinite="load_more('2');">
+      </ion-infinite-scroll>
+    </ion-content>
+
+  </div>
+  <div ng-if="uiShow == false &&resultArrChase.length ==0">
+    <ion-content style="top:14.25rem;background-color: #ffffff;" class="no_bet_records"></ion-content>
+  </div>
+
+</ion-view>
+
+
+
+

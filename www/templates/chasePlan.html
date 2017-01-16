@@ -1,0 +1,78 @@
+
+<ion-view>
+  <ion-header-bar class="bar-dark" id="mainHead">
+    <a class="backA button button-clear ion-chevron-left" ng-click="goBack()"></a>
+    <h1 class="title">高级追号</h1>
+    <a class="button button-clear icon" href="#/chaseSet">设置</a>
+  </ion-header-bar>
+  <ion-content style=" bottom: 6.8rem;background:#ffffff; top:4rem;">
+    <div id="chaseHaute">
+        <div class="chaseHaute_top">
+          <p class="chaseHaute_top_issue"> 第{{currentMarket.drawData.drawNumber}}期</p>
+          <p class="chaseHaute_top_stop"><span ng-if="betPlan.type == 1">利润追号</span><span ng-if="betPlan.type == 2">同倍追号</span><span ng-if="betPlan.type == 3">翻倍追号</span><span ng-if="betPlan.stopUtilWin">-追中即停</span></p>
+          <p class="chaseHaute_top_end">投注截止:&nbsp;{{currentMarket.timeLeft}}</p>
+        </div>
+      <table class="chaseHaute_tab" ng-if="betPlan.type == 1">
+        <tr>
+          <th>序号</th>
+          <th>期号</th>
+          <th>倍数</th>
+          <th>金额</th>
+          <th>奖金</th>
+          <th>盈利金额</th>
+          <th>盈利率</th>
+          <th>操作</th>
+
+        </tr>
+        <tr ng-repeat="Plan in PlanDataList">
+          <td>{{Plan[0]}}</td>
+          <td>{{Plan[1].substring(Plan[1].length - drawNumLength,Plan[1].length )}}</td>
+          <td>{{Plan[2]}}</td>
+          <td>{{Common.addDotToNumber(Plan[3],2)}}</td>
+          <td>{{Common.addDotToNumber(Plan[4],2)}}</td>
+          <td>{{Common.addDotToNumber(Plan[5],2)}}</td>
+          <td>{{Common.addDotToNumber(Plan[6],2)}}%</td>
+          <td class="chaseHaute_tab_option">
+            <label class="checkbox">
+              <input type="checkbox"  ng-model="Plan[7]" ng-change="checkboxPlan()"/>
+            </label>
+          </td>
+        </tr>
+      </table>
+      <table class="chaseHaute_tab" ng-if="betPlan.type != 1">
+        <tr>
+          <th>序号</th>
+          <th>追号期数</th>
+          <th>倍数</th>
+          <th>金额</th>
+          <th>预计开奖时间</th>
+          <th>操作</th>
+        </tr>
+        <tr ng-repeat="Plan in PlanDataList">
+          <td>{{Plan[0]}}</td>
+          <td>{{Plan[1].substring(Plan[1].length - drawNumLength,Plan[1].length )}}</td>
+          <td>{{Plan[2]}}</td>
+          <td>{{Common.addDotToNumber(Plan[3],2)}}</td>
+          <td>{{Plan[4]}}</td>
+          <td class="chaseHaute_tab_option">
+            <label class="checkbox">
+              <input type="checkbox"  ng-model="Plan[5]" ng-change="checkboxPlan()"/>
+            </label>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </ion-content>
+
+  <ion-footer-bar style="height:6.8rem;padding: 0;border-top:1px solid #e4e4e4;">
+    <div id="chaseHaute_bottom" style="border-top: none;">
+      <p class="calculateSum">
+        总投注 <span>{{allPlan}}</span>注 追<span>{{allPlan}}</span>期 投注总额 <span>{{Common.addDotToNumber(allBuyMoney,2)}}</span><span>元</span>
+      </p>
+      <p class="calculateBalance">
+        可用余额 <em >{{Common.addDotToNumber(balance,4)}}</em>元
+      </p>
+        <div class="betSure" ng-click="betPromptModel()">确认投注</div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

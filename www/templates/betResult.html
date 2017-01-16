@@ -1,0 +1,56 @@
+<ion-view>
+  <ion-header-bar class="bar-dark" id="mainHead">
+    <a class="backA button button-clear ion-chevron-left"  nav-direction="back" href="#{{messageBet.url}}"></a>
+    <h1 class="title">投注结果</h1>
+  </ion-header-bar>
+  <ion-content id="mainContent" style="background: #ffffff;">
+    <div id="betResult">
+      <ul class="betResult_market">
+        <div>
+          <p class="fault" ng-if="messageBet.code != 0">投注失败</p>
+          <p class="success" ng-if="messageBet.code == 0">投注成功</p>
+        </div>
+        <li>
+          <p>
+            彩票名称
+            <span>{{MarketCNName}}</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            投注期号
+            <span>第{{messageBet.drawNum}}期</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            总投注
+            <span>{{messageBet.allBetCount}}注</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            投注金额
+            <span>{{Common.addDotToNumber(messageBet.allBetAmount,2)}}元</span>
+          </p>
+        </li>
+        <li ng-if="messageBet.code != 0">
+          <p>
+            失败原因
+            <em>{{Localize.data[messageBet.code]}}</em>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+
+  <ion-footer-bar id="betResult_bottom">
+    <div class="betResult_operation">
+      <span class="queryResult" ng-click="goBetHistory()">查看投注记录</span>
+      <span class="betContinue" ng-click="continueBet()">继续投注</span>
+    </div>
+  </ion-footer-bar>
+
+
+
+</ion-view>

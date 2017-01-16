@@ -1,0 +1,106 @@
+<ion-view ng-click="views.closeSelect($event)">
+    <ion-header-bar align-title="center" id="mainHead">
+        <a class="backA button button-clear ion-chevron-left" ng-click="views.goDrawList()"></a>
+        <h1 class="title itemType">{{currentMarket.marketCNName}}</h1>
+        <a class="button button-clear icon ion-navicon headMenu" ng-click="views.menuToggle()"></a>
+    </ion-header-bar>
+    <ul id="menuList" ng-if="isShow">
+        <li ng-click="views.goPlayDesc()">
+            <p>玩法说明</p>
+        </li>
+        <li ng-click="views.goLotteryBall()">
+            <p>开奖号码</p>
+        </li>
+        <li ng-click="moneyModel()">
+            <p>资金模式<i ng-if="currentSelect == 2">(元)</i><i ng-if="currentSelect == 0.2">(角)</i><i ng-if="currentSelect == 0.02">(分)</i></p>
+        </li>
+        <em></em>
+    </ul>
+    <div class="playTop">
+        <div class="playTop_issue">
+            <span class="drawNumber">第{{currentMarket.drawData.drawNumber}}期</span>
+            <span class="time">投注截止&nbsp;{{currentMarket.timeLeft}}</span>
+            <span class="randomBet" ng-click="views.randomNum()">随机一单</span>
+        </div>
+        <div class="warning">
+            <p class="explain" ng-click="views.PlayModel()"><i>!</i><span>玩法/中奖说明</span></p>
+            <div class="itemSelect">
+                <div class="itemSelect_inputbox" ng-click="views.select()">
+                    <input readonly="readonly" class="select" ng-model="views.betFullName" onfocus="this.blur();">
+                    <i ng-class="views.playDropClass[views.dropBox]"></i>
+                </div>
+                <!--<div ng-show = "views.selectBox" class="divOption">-->
+                <!--<div ng-repeat="item in playData.playFamilyData track by $index" value="{{item}}" ng-click="views.changeDropBox(item,$index)">{{item}}</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <!--&lt;!&ndash;五星直选下拉框展示&ndash;&gt;-->
+        <div class="dropBox" ng-show="views.dropBox" ng-click="views.dropBoxHide($event)">
+            <ion-scroll delegate-handle="small" style="position: absolute; left: 0;right: 0;top: 0; background-color: #fff;overflow: hidden; height: 19rem;" class="scrollTag" ng-if="betRuleInstance.gameCode != 'K3'">
+                <ul class="play">
+                    <li ng-repeat="play in playListData" class="playData">
+                        <ul class="playTypeList">
+                            <li class="family-item" ng-repeat="item in play.list">
+                                <div class="name">{{ item.fullGroupName ? item.fullGroupName : item.groupName}}</div>
+                                <div class="familyPlayList">
+                                    <div ng-click="playData.selectType($parent.$index,$index,type)" ng-repeat="type in item.playingMethods" class="type {{type.methodId}}" ng-class="{'selected-type':views.selectType == type.methodId}">
+                                        {{type.methodName}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ion-scroll>
+            <ion-scroll class="scrollTag" delegate-handle="small" style=" position: absolute;bottom: 78%; left: 0;right: 0;top: 0; background-color: #fff;overflow: scroll;" ng-if="betRuleInstance.gameCode == 'K3'">
+                <ul class="play">
+                    <li ng-repeat="play in playListData" class="playData">
+                        <ul class="playTypeList" >
+                            <li class="family-item">
+                                <div class="familyPlayList" style="max-width:100%">
+                                    <div ng-click="playData.selectType($parent.$index,$index,item)" ng-repeat="item in play.list" class="type" ng-class="{'selected-type':views.selectType == item.methodId}">
+                                        {{item.familyName}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ion-scroll>
+        </div>
+    </div>
+    <div class="playList">
+        <ion-nav-view name="playTemplates"></ion-nav-view>
+    </div>
+    <div class="ball-footer">
+        <div class="setBetting">
+            <div class="oddsDiv">
+                <span class="itemText">投注倍数</span>
+                <p class="numToggle">
+                    <a class="plus ion-plus" ng-click="views.addMultiple()"></a>
+                    <input ng-model="betRuleInstance.multiple" ng-keyup="views.clearNoNum('multiple')" />
+                    <a class="minus ion-minus" ng-click="views.reduceMultiple()"></a>
+                </p>
+            </div>
+            <div class="rebate">
+                <div class="itemText">投注返点</div>
+                <div class="selectCover">
+                    <em class="ion-chevron-down">{{oddsGroupName}}</em>
+                    <select class="select-multiple" ng-model="betSetting.currentOddsGroup[betRuleInstance.gameCode]" ng-change="views.changeOdds(betSetting.currentOddsGroup[betRuleInstance.gameCode])">
+                        <option ng-repeat="item in views.oddsGroup" value={{item.oddsGroupName}}>{{item.text}}</option>
+                    </select>
+                </div>
+            </div>
+            <button class="addBut" ng-click="playData.addBet()" ng-class="{'dis':betRuleInstance.betCount == '0'}" style="cursor: pointer">添加</button>
+        </div>
+        <div class="ballDetail">
+            您选择了<span ng-bind="betRuleInstance.betCount">{{betRuleInstance.betCount}}</span>注，<span>{{betRuleInstance.multiple}}</span>倍，投注<span>{{Common.addDotToNumber(betRuleInstance.betAmount)}}</span><span>元</span>
+        </div>
+        <div class="money">
+            可用余额<span>{{Common.addDotToNumber(balance,4)}}</span><span>元</span>
+        </div>
+        <div class="footer" ng-click="views.numberFamily()" ng-class="{'dis':betZoneData.length == '0'}" style="cursor: pointer">
+            号码篮
+        </div>
+    </div>
+</ion-view>

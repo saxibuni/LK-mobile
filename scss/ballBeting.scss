@@ -1,0 +1,526 @@
+.BB-betting {}
+
+.headColor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    background-color: #333d61;
+    .itemType {
+        color: #ffffff;
+        font-size: 1.4rem !important;
+    }
+    .headBack {
+        color: #fff;
+        font-size: 2rem;
+    }
+    .headMenu {
+        color: #fff;
+        font-size: 2rem;
+    }
+}
+
+.playTop {
+    position: absolute;
+    background-color: #ffffff;
+    right: 0;
+    left: 0;
+    top: 4rem;
+    padding: 0 0.5rem;
+    color: #6879b5;
+    font-size: 1.25rem;
+    text-align: center;
+    z-index: 99;
+    min-height: 5.3rem;
+    .playTop_issue {
+        overflow: hidden;
+        height: 2rem;
+        line-height: 2rem;
+        .drawNumber{
+          text-align: center;
+        }
+        .time {
+            float: left;
+            color: #e73247;
+            font-size: 0.8333rem;
+        }
+        .randomBet {
+          float: right;
+          background: #6879b5;
+          color: #ffffff;
+          font-size: 0.8333rem;
+          border-radius: 0.1rem;
+          height: 2rem;
+          line-height: 2rem;
+          width: 6rem;
+          background-image: url("../img/randomBet.png");
+          background-repeat: no-repeat;
+          background-position: 0.3rem center;
+          background-size: 1.2rem 1.3rem;
+          text-align: center;
+          cursor: pointer;
+          padding-left: 1.2rem;
+        }
+    }
+    .warning {
+        overflow: hidden;
+        margin-top: 0.6rem;
+        height: 2.5rem;
+        .explain {
+            float: left;
+            cursor: pointer;
+            height: 2rem;
+            line-height: 2rem;
+            i {
+              font-size: 1rem;
+              border: 1px solid;
+              border-radius: 50%;
+              width: 1.2rem;
+              height: 1.2rem;
+              float: left;
+              margin-top: 0.4rem;
+              line-height: 1.2rem;
+            }
+            span {
+                font-size: 0.83rem;
+                float: right;
+                margin-left: 0.3rem;
+                color: #464646;
+            }
+        }
+        .itemSelect {
+            width: 10rem;
+            float: right;
+            border: 1px solid #e4e4e4;
+            right: 1rem;
+            z-index: 999;
+            background: #fff;
+            height: 2.1rem;
+            margin-top: 0.2rem;
+            .itemSelect_inputbox {
+                i {
+                  color: #b0b0b0;
+                  right: 0.4rem;
+                  font-size: 1.3rem;
+                  float: right;
+                  margin-right: 0.5rem;
+                  line-height: 2rem;
+                  height: 2rem;
+                }
+            }
+            .select {
+              letter-spacing: 0.1rem;
+              color: #9d9d9d;
+              font-size: 0.84rem;
+              border-radius: 5px;
+              text-align: center;
+              border: none;
+              background: #fff;
+              width: 8rem;
+              cursor: pointer;
+              float: left;
+              height: 1.95rem;
+              line-height: 1.95rem;
+            }
+            .option {
+                text-align: center;
+            }
+            .divOption {
+                width: 8.75rem;
+                border-top: 1px solid #e4e4e4;
+                div {
+                    font-size: 0.8333rem;
+                    text-align: center;
+                    line-height: 1.2rem;
+                    width: 100%;
+                    padding: 3px 0;
+                    text-align: left;
+                    text-indent: 3.3rem;
+                }
+                div:hover {
+                    background-color: #6879b5;
+                    color: #ffffff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+  .dropBox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 9rem;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    .play{
+      /* position: absolute;
+       left: 0;
+       right: 0;
+       height: 28rem;*/
+      //overflow: hidden;
+      //overflow-y: scroll;
+      .playData{
+        width: 100%;
+        background-color: #fff;
+        .playName{
+          width: 100%;
+          text-align: left;
+          height: 2.5rem;
+          font-size: 1rem;
+          line-height: 2.5rem;
+          font-weight: 700;
+          color: #3a3a3a;
+          padding-left: 1rem;
+          background-color: #fafafa;
+          border-top: 1px solid #e4e4e4;
+          cursor: pointer;
+          i{
+            float: right;
+            padding-right: 1rem;
+            font-size: 1.5rem;
+          }
+        }
+        .playTypeList {
+          background-color: #fff;
+          // min-height: 10.1rem;
+          width: 100%;
+          border-top: 1px solid #e4e4e4;
+          .family-item {
+            &:last-child{
+              border-bottom: none;
+            }
+            padding: 0.5rem;
+            overflow: hidden;
+            border-bottom: 1px solid #e4e4e4;
+            .name {
+              font-size: 0.85rem;
+              color: #3a3a3a;
+              float: left;
+              text-align: left;
+              width: 5rem;
+            }
+            .familyPlayList {
+              max-width: 80%;
+              float: left;
+            }
+            .type {
+              float: left;
+              font-size: 0.75rem;
+              color: #898989;
+              padding: 0 0.8rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+.playList {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    right: 0;
+    bottom: 10.5rem;
+}
+
+
+.ball-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-top: 1px solid #e4e4e4;
+    .setBetting {
+        border-bottom: 1px solid #e4e4e4;
+        font-size: 0.8rem;
+        color: #888888;
+        overflow: hidden;
+        padding: 0 0.5rem;
+        height: 3rem;
+        .oddsDiv {
+            float: left;
+            .itemText {
+                float: left;
+                height: 3rem;
+                line-height: 3rem;
+            }
+            .numToggle {
+                float: left;
+                border: 1px solid #e4e4e4;
+                border-radius: 1rem;
+                width: 5.7rem;
+                margin: 0.4rem 0.2rem;
+                a {
+                    color: #959595;
+                    height: 1.9rem;
+                    line-height: 1.9rem;
+                    text-align: center;
+                    width: 1.4rem;
+                }
+                .minus {
+                    float: right;
+                    border-left:1px solid #e4e4e4;
+                    line-height: 2rem;
+                    cursor: pointer;
+                    height: 1.9rem;
+                }
+                .plus {
+                    float: left;
+                    margin-left: 2px;
+                    border-right:1px solid #e4e4e4;
+                    line-height: 2rem;
+                    height: 1.9rem;
+                }
+                input {
+                    width: 2.5rem;
+                    border: 0;
+                    text-align: center;
+                    height:2rem;
+                    color: #3a3a3a;
+                    float: left;
+                    font-family: "微软雅黑";
+                }
+            }
+        }
+        .rebate {
+            float: left;
+            .itemText {
+                float: left;
+                height: 3rem;;
+                line-height: 3rem;;
+                margin: 0 0.3rem;
+            }
+          .selectCover{
+            float: left;
+            height: 2rem;
+            border: 1px solid #e4e4e4;
+            margin-top: 0.5rem;
+            position: relative;
+            em{
+              float: left;
+              height: 2rem;
+              line-height: 2rem;
+              width: 7.5rem;
+              padding-left: 0.1rem;
+            }
+            em::before{
+              top: 0.6rem;
+              position: absolute;
+              right: 0.2rem;
+              height: 0.8rem;
+            }
+            .select-multiple {
+              height: 2rem;
+              color: #888;
+              border: none;
+              width: 7.5rem;
+              position: absolute;
+              left: 0;
+              opacity:0;
+              padding-left:0.4rem;
+            }
+          }
+            .selectMix {
+                float: left;
+                border: 1px solid #e4e4e4;
+                border-bottom: 0;
+                height: 2rem;
+                margin-top: 0.3rem;
+                width: 8rem;
+                input {
+                    border: none;
+                    text-align: center;
+                    width: 7.8rem;
+                    height: 1.9rem;
+                    color: #888888;
+                }
+                i {
+                    position: relative;
+                    top: 0;
+                    right: 0.4rem;
+                    float: right;
+                    margin-top: -1.9rem;
+                }
+                .selectMix_options {
+                    position: absolute;
+                    width: 8rem;
+                    border: 1px solid #e4e4e4;
+                    margin-left: -1px;
+                    background: #fff;
+                }
+                p {
+                    color: #6879b5;
+                    text-align: center;
+                    line-height: 1.2rem;
+                }
+            }
+        }
+        .addBut {
+            color: #ffffff;
+            background-color: #6879b5;
+            border-radius: 0.1rem;
+            float: right;
+            width: 3.5rem;
+            text-align: center;
+            height: 2rem;
+            line-height: 2rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .addBut.dis {
+            background: #c0c0c0;
+            pointer-events: none;
+        }
+        .addBut:active {
+            color: #6879b5;
+            background-color: #fff;
+        }
+    }
+    .ballDetail,
+    .money {
+        width: 100%;
+        font-size: 0.85rem;
+        color: #000000;
+        padding-left: 1rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: 0.05rem;
+        span {
+            color: #6879b5;
+            letter-spacing: 0;
+            display: inline-block;
+            margin: 0 0.2rem 0 0.2rem;
+        }
+    }
+    .money {
+        span {
+            color: #e73247;
+            letter-spacing: 0;
+            display: inline-block;
+            margin: 0 0.2rem 0 0.2rem;
+        }
+    }
+    .footer {
+        height: 2.5rem;
+        width: 100%;
+        text-align: center;
+        line-height: 2.5rem;
+        font-size: 1.25rem;
+        color: #fff;
+        cursor: pointer;
+        background-color: #e73247;
+    }
+}
+
+.selected-ball {
+    background-color: #6879b5;
+    color: #ffffff !important;
+    transition: 0.5s;
+}
+
+.selected-item {
+  background: #6879b5;
+  color: #fff !important;
+  border-radius: 1rem;
+  height: 2rem;
+  line-height: 1.9rem;
+  display: inline-block;
+  border: 1px solid #e4e4e4;
+  margin-top: 0.2rem;
+}
+
+.selected-type {
+    background-color: #f5f6fa !important;
+    color: #6879b5 !important;
+    padding: 0 0.8rem;
+    border-radius: 20px;
+}
+
+#menuList {
+    position: absolute;
+    background: #fff;
+    right: 0;
+    z-index: 9999;
+    border-left: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    li {
+        height: 3rem;
+        line-height: 3rem;
+        padding-left: 3rem;
+        color: #3a3a3a;
+        font-size: 0.9rem;
+        cursor: pointer;
+      p{
+        border-bottom: 1px solid #e4e4e4;
+        text-align: left;
+        padding-right: 1rem;
+      }
+    }
+    li:nth-child(1) {
+        background: url(../img/common/playDesc.png) no-repeat 0.8rem center;
+        background-size:  1.2rem 1.5rem;
+    }
+    li:nth-child(2) {
+        background: url(../img/common/happyNum.png) no-repeat 0.8rem center;
+        background-size:  1.2rem 1.5rem;
+    }
+    li:nth-child(3) {
+        background: url(../img/common/money.png) no-repeat 0.8rem center;
+        background-size:  1.4rem 1.4rem;
+      p{
+        border-bottom: 0;
+      }
+    }
+    em {
+        width: 0.6rem;
+        height: 0.6rem;
+        background: #fff;
+        position: absolute;
+        top: -0.3rem;
+        transform: rotate(45deg);
+        left: 80%;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+    }
+}
+
+.tx {
+    left: 1rem !important;
+}
+
+.dis {
+    background: #c0c0c0 !important;
+    pointer-events: none;
+}
+
+.unit-selected {
+    color: #fff !important;
+    background-color: #6879b5;
+}
+.select-method{
+  border-bottom: 1px solid #DFDFDF;
+  min-height: 25px;
+  padding: 5px 10px;
+  line-height: 1.6;
+  width: 100%;
+  text-align: left;
+}
+.winning-rule{
+  min-height: 50px;
+  padding: 5px 10px;
+  line-height: 1.6;
+  width: 100%;
+  text-align: left;
+}

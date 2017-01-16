@@ -1,0 +1,50 @@
+
+#playDesc{
+  .playDesc_top{
+    text-align: center;
+    border-bottom:1px solid #e4e4e4;
+    padding-top: 0.6rem;
+    background: #ffffff;
+     img{
+       width:4rem;
+       height: 4rem;
+       border-radius: 50%;
+       margin-bottom: 0.5rem;
+     }
+    .market{
+      font-size:1.25rem;
+      color:#3a3a3a;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .playDesc_time{
+    font-size:0.83333rem ;
+    padding:0.5rem 0.8rem 0.8rem;
+    color:#464646 ;
+    background-color: #ffffff;
+    border-bottom:1px solid #e4e4e4;
+    .red{
+      font-size:0.83333rem ;
+      color:#e73247 ;
+    }
+  }
+  ul{
+    .playDesc_betType{
+      font-size: 1rem;
+      color: #3a3a3a;
+      border-bottom: 1px solid #e4e4e4;
+      height: 2rem;
+      line-height: 2rem;
+      padding: 0 1rem;
+    }
+    .playDesc_betType_desc{
+      font-size:0.83333rem ;
+      color:#888888 ;
+      border-bottom:1px solid #e4e4e4;
+      padding:0.4rem 1.2rem;
+      line-height: 1.3rem;
+      background: #ffffff;
+    }
+  }
+
+}

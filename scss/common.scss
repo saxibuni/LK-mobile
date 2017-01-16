@@ -1,0 +1,287 @@
+@media screen and (min-width: 240px){
+  html{font-size:9px;};
+  //底部图标
+  .tab-item .icon{
+    background-size:1.6rem 1.3rem;
+    //background-size: 1.625rem 1.208333rem;
+    //background-size: 1.54166rem 1.3333rem;
+    //background-size: 1.458333rem 1.208333rem;
+  }
+  #mainHead .backA{
+    margin-top: 6px;
+  }
+  #menuList{
+    top:43px;
+  }
+}
+@media screen and (min-width: 320px){html{font-size:12px;}}
+@media screen and (min-width: 380px){html{font-size:14px;}}
+@media screen and (min-width: 420px){html{font-size:16px;}}
+@media screen and (min-width: 450px){html{font-size:17px;}}
+@media screen and (min-width: 480px){html{font-size:18px;}}
+@media screen and (min-width: 540px){html{font-size:20.25px;}}
+@media screen and (min-width: 600px){html{font-size:22px;}}
+@media screen and (min-width: 640px){
+  html{font-size:24px;}
+  //头部
+  #mainHead {
+    height: 3rem;
+  }
+  #mainHead h1{
+    height: 3rem;
+    line-height: 3rem;
+  }
+  #mainContent{
+    top:3rem;
+    bottom:3rem;
+  }
+  #mainHead a{
+    margin-top: 0.8rem;
+    margin-right: 0.5rem;
+  }
+  #mainHead .backA{
+    margin-top: 0.8rem;
+  }
+  #menuList{
+    top:3rem
+  }
+  //底部
+  .tab-nav, .tabs{
+    height: 3rem;
+  }
+  .tab-item,.tab-title{
+    font-size: 0.6rem;
+    line-height: 1.2rem;
+    display: inline-block;
+  }
+  .tab-item .icon{
+    background-size: 1.8rem 1.3rem;
+    margin-top: 0.4rem;
+  }
+}
+
+@font-face{
+  font-family: 'Adobe 黑体 Std';
+  src: url('../font/Adobe-Heiti-Std-R.TTF') format('truetype');
+}
+
+*{
+  font-family: "Adobe 黑体 Std","Microsoft YaHei";
+}
+button, input, select, textarea,div,span,p,a,em{
+  font-family: 'Adobe 黑体 Std';
+}
+
+#mainHead {
+  background: #333d61;
+  padding: 0 0.8rem;
+}
+#mainHead h1{
+  font-size:1.41666rem ;
+  color: #fff;
+  font-family: "Adobe 黑体 Std";
+}
+#mainHead a{
+  color: #fff;
+  font-size: 1.3rem;
+}
+#mainContent{
+  background: #fafafa;
+}
+.tab-nav, .tabs{
+  background: #f0f0f0;
+  border-top: 1px solid #d3d2d2!important;
+}
+a:active{
+  color:#666666!important;
+}
+.tab-title:active{
+  color:#666666!important;
+}
+.tabs-icon-bottom.tabs .tab-item, .tabs-icon-bottom>.tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-top>.tabs .tab-item.tabs-icon-bottom.tabs .tab-item, .tabs-icon-bottom>.tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-top>.tabs .tab-item{
+  color:#666666!important;
+}
+//background-size: 1.625rem 1.208333rem;
+//background-size: 1.54166rem 1.3333rem;
+//background-size: 1.458333rem 1.208333rem;
+.tabs_LotteryFun_on{
+  background: url(../img/common/LotteryFun_on.png) center no-repeat;
+}
+.tabs_LotteryFun_on~.tab-item ,.tabs_LotteryFun_on~.tab-title{
+  color: #6879b5;
+}
+.tabs_LotteryFun_off{
+  background: url(../img/common/LotteryFun_off.png) center no-repeat;
+}
+.tabs_trends_on~.tab-item ,.tabs_trends_on~.tab-title{
+  color: #6879b5;
+}
+.tabs_trends_on{
+  background: url(../img/common/ballTrends_on.png) center no-repeat;
+}
+.tabs_trends_off{
+  background: url(../img/common/ballTrends_off.png) center no-repeat;
+}
+.tabs_myDetail_on~.tab-item ,.tabs_myDetail_on~.tab-title{
+  color: #6879b5;
+}
+.tabs_myDetail_on{
+  background: url(../img/common/myDetail_on.png) center no-repeat;
+}
+.tabs_myDetail_off{
+  background: url(../img/common/myDetail_off.png) center no-repeat;
+}
+.tab-title{
+  color:#444444;
+  opacity: 1;
+}
+
+/*弹框*/
+.popup-container .popup{
+  width:21rem;
+  max-height: 15rem;
+  background: #fff;
+}
+.popup-buttons .button{
+  min-height: 3.2rem;
+  background: transparent;
+}
+.popup-head{
+  border-bottom: 1px solid #e4e4e4;
+  padding:0.8rem;
+}
+.popupTitle{
+  font-size: 1.08333rem;
+  color: #3a3a3a;
+  font-family: "Adobe 黑体 Std";
+  span{
+    padding: 0 0.2rem;
+  }
+}
+.popup-buttons{
+  padding: 0;
+  min-height: 0;
+}
+.popup-body{
+  min-height: 3rem;
+  text-align: center;
+  color: #888888;
+}
+.modelContent {
+  text-align: center;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  div{
+    margin: 0.5rem 0;
+    font-family: "Adobe 黑体 Std";
+  }
+  em{
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border: 1px solid #e4e4e4;
+    display: inline-block;
+    margin-left: 20px;
+    color: #6879b5;
+    font-size: 1rem;
+    border-radius: 50%;
+  }
+  em:first-child{
+    margin-left: 0px;
+  }
+  span{
+    padding: 0.3rem;
+  }
+  .betSum{
+    color: #000000;
+    font-size: 1.125rem;
+  }
+
+  .font_red{
+    color: #d52b3f;
+  }
+
+}
+.modelContent p.selected{
+  background-color:#6879b5;
+  color: #fff;
+}
+.pop_cancel,.pop_sure{
+  color: #fff;
+  font-size: 0.8rem;
+  display: inline-block;
+  padding: 0;
+  width: 100%;
+  border-radius: 2px;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  font-weight: normal;
+}
+.pop_cancel{
+  background: #e83248;
+  font-family: "Adobe 黑体 Std";
+}
+.pop_sure{
+  background: #4f65a6;
+  font-family: "Adobe 黑体 Std";
+}
+.button{
+  border: 0;
+}
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"]{
+  background: #fafafa;
+}
+#mainFoot{
+  position: fixed;
+  bottom:0;
+  left:0;
+}
+
+/*
+状态*/
+//待开奖 追号中
+.wait_chasing{
+  color:#6879b5!important;
+}
+//中奖
+.happy{
+  color:#e73247!important;
+}
+//已开奖
+.alreadyStar{
+  color:#909090!important;
+}
+//已撤单 已撤单 用户系统
+.alreadyBack{
+  color:#dba130!important;
+}
+//
+.doBack{
+  color: #6879b5!important;
+  border: 1px solid #6879b5!important;
+  text-align: center;
+  border-radius: 1.1rem;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  margin-top: 0.6rem;
+  width: 5rem;
+  margin-right: -0.5rem;
+}
+.font_blue{
+  color:#6879b5;
+  font-size: 1.125rem;
+}
+.font_red{
+  color:#e73247
+}
+//遮罩
+.loading-container.active{
+  background:rgb(245,246,250);
+}
+//无投注(追号)记录
+.no_bet_records{
+  background: url(../img/no-bet-records.png) no-repeat center 3rem;
+  background-size: 10rem 9rem;
+}

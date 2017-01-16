@@ -1,0 +1,19 @@
+<ul class="listUL" style="margin-top: 0.5rem;">
+  <div class="checkboxPlay">
+    <ion-checkbox ng-repeat="item in currentCheckbox.checkboxType2" ng-model="item.checked" ng-change ="selectCheckBox()">
+      {{ item.name }}
+    </ion-checkbox>
+  </div>
+  <li class="ballContent">
+    <div class="listTop">
+      <div class="tx ballNumber">
+        <span>和值</span>
+      </div>
+    </div>
+    <div class="ListBottom">
+      <ul class="list3">
+        <li ng-repeat="ball in ballList track by $index" ng-class="{'selected-ball':betRuleInstance.result[0].indexOf(ball.toString()) >= 0 }" ng-click="selectBall(ball)">{{ball}}</li>
+      </ul>
+    </div>
+  </li>
+</ul>

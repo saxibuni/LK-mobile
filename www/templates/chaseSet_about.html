@@ -1,0 +1,137 @@
+<ion-view>
+  <ion-view>
+    <ion-header-bar class="bar-dark" id="mainHead">
+      <a class="backA button button-clear ion-chevron-left" href="#/chaseSet"></a>
+      <h1 class="title">{{chaseTitle}}</h1>
+    </ion-header-bar>
+
+    <ion-content id="mainContent">
+      <ul class="chaseSet_type" ng-if="chaseType == 'profits'">
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>最低收益率</span>
+            <p>
+              <input class="numInput" ng-keyup="clearNoNum('interest1')" ng-model="betPlan.interest1"/>%
+            </p>
+          </div>
+        </li>
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+           <span>追号期数</span>
+            <p class="numToggle">
+              <a class="minus" ng-click="changePeriods('remove','periods1')">-</a>
+              <input  ng-keyup="clearNoNum('periods1')" ng-model="betPlan.periods1"/>
+              <a class="plus" ng-click="changePeriods('add','periods1')">+</a>
+            </p>
+          </div>
+        </li>
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>追号即停</span>
+            <label class="toggle toggle-calm">
+              <input type="checkbox" ng-model="betPlan.stopUtilWin">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </li>
+      </ul>
+      <ul class="chaseSet_type" ng-if="chaseType == 'same'">
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+           <span>起始倍数</span>
+            <p class="numToggle">
+              <a class="minus" ng-click="changeCount('remove','startMultiple2')">-</a>
+              <input   ng-model="betPlan.startMultiple2" ng-keyup="clearNoNum('startMultiple2')"/>
+              <a class="plus" ng-click="changeCount('add','startMultiple2')">+</a>
+            </p>
+          </div>
+        </li>
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>追号期数</span>
+            <p class="numToggle">
+              <a class="minus" ng-click="changePeriods('remove','periods2')">-</a>
+              <input   ng-model="betPlan.periods2"  ng-keyup="clearNoNum('periods2')"/>
+              <a class="plus" ng-click="changePeriods('add','periods2')">+</a>
+            </p>
+          </div>
+        </li>
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>追号即停</span>
+            <label class="toggle toggle-calm">
+              <input type="checkbox" ng-model="betPlan.stopUtilWin">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </li>
+      </ul>
+      <ul class="chaseSet_type" ng-if="chaseType == 'double'">
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>起始倍数</span>
+            <p class="numToggle">
+              <a class="minus" ng-click="changeCount('remove','startMultiple3')">-</a>
+              <input  ng-model="betPlan.startMultiple3"  ng-keyup="clearNoNum('startMultiple3')"/>
+              <a class="plus" ng-click="changeCount('add','startMultiple3')">+</a>
+            </p>
+          </div>
+        </li>
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>隔</span>
+            <p class="numToggle">
+              <a class="minus" ng-click="changeInterval('remove','interval3')">-</a>
+              <input  ng-model="betPlan.interval3" ng-keyup="clearNoNum('interval3')"/>
+              <a class="plus" ng-click="changeInterval('add','interval3')">+</a>
+            </p>
+          </div>
+        </li>
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>期倍x</span>
+            <p class="numToggle">
+              <a class="minus" ng-click="changeCount('remove','multiple3')">-</a>
+              <input  ng-model="betPlan.multiple3"  ng-keyup="clearNoNum('multiple3')"/>
+              <a class="plus" ng-click="changeCount('add','multiple3')">+</a>
+            </p>
+          </div>
+        </li>
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>期数</span>
+            <p class="numToggle">
+              <a class="minus" ng-click="changePeriods('remove','periods3')">-</a>
+              <input  ng-model="betPlan.periods3"  ng-keyup="clearNoNum('periods3')"/>
+              <a class="plus" ng-click="changePeriods('add','periods3')">+</a>
+            </p>
+          </div>
+        </li>
+        <li class="chaseSet_li">
+          <div class="chaseSet_div">
+            <span>追号即停</span>
+            <label class="toggle toggle-calm">
+              <input type="checkbox" ng-model="betPlan.stopUtilWin">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </li>
+      </ul>
+    </ion-content>
+    <ion-footer-bar>
+      <div class="chaseSet_bottom" ng-click="goPlan()">生成追号计划</div>
+    </ion-footer-bar>
+
+  </ion-view>
+
+
+
+
+
+</ion-view>

@@ -1,0 +1,57 @@
+<ion-view>
+    <ion-header-bar align-title="center" id="mainHead">
+      <a class="backA button button-clear ion-chevron-left" ng-click="goBallBet()"></a>
+      <h1 class="title itemType">号码篮</h1>
+      <a class="button button-clear icon" ng-if="betZoneData.length != 0" ng-click="clearList()">清空</a>
+    </ion-header-bar>
+    <div class="randomRelus">
+      <span ng-click="randomRelus(1)">机选一注</span>
+      <span ng-click="randomRelus(3)">机选三注</span>
+      <span ng-click="randomRelus(5)">机选五注</span>
+    </div>
+    <ion-content id="mainContent" style="bottom: 10.5rem;top:6.5rem;">
+      <ul class="ball_basket_betType">
+        <li ng-repeat="item in betZoneData" ng-class="{'removeAction':$index == removeIndex}">
+          <div class="ball_basket_left" ng-click="reduction(item)" >
+            <div>{{Lottery.gameMapCNName[item.gameCode][item.betType].methodName}}<i ng-if="item.betUIContent.length > 36" ng-class="{'ion-ios-arrow-up bule': moreContent == $index,'ion-ios-arrow-down gray': moreContent != $index}"  ng-click="showMore($event,$index)"></i></div>
+            <p class="ball_basket_result" ng-hide="moreContent == $index">{{item.betUIContent}}</p>
+            <p ng-if="moreContent == $index" class="showMore">{{item.betUIContent}}</p>
+            <p class="ball_basket_desc">您选择了 <span>{{item.betCount}}</span> 注，<span>{{item.multiple}}</span> 倍，投注 <span>{{Common.addDotToNumber(item.betAmount,2)}}元</span></p>
+          </div>
+          <div class="ball_basket_right">
+            <!--<ion-option-button class="delBtn ion-ios-minus" ></ion-option-button>-->
+            <em class="ion-minus-circled" ng-click="removeList($index,$event)"></em>
+          </div>
+        </li>
+      </ul>
+    </ion-content>
+    <div class="ball-footer">
+      <div class="ball_planCreate">
+        <div class="ball_planCreate_periods">
+          <span>追号期数</span>
+          <p class="numToggle">
+            <a class="plus ion-plus" ng-click="changePeriods('add','tbPeriods')"></a>
+            <input ng-model="betPlan.tbPeriods" ng-keyup="clearNoNum('tbPeriods')"/>
+            <a class="minus ion-minus" ng-click="changePeriods('remove','tbPeriods')"></a>
+          </p>
+        </div>
+
+        <p class="lotteryStop">
+          <input id="stopCheck" type="checkbox" ng-model="betPlan.stopUtilWin"/>
+          <label class="stopLabel" for="stopCheck"></label>
+          <span>中奖后终止</span>
+        </p>
+        <em ng-click="goChaseSet()" ng-class="{'dis':betZoneData.length == 0 }" style="cursor: pointer">高级追号</em>
+      </div>
+        <div class="ballDetail">
+          您选择了<span>{{viewsNumberFamily.allBetCount}}</span>注，
+          <!--<span>{{viewsNumberFamily.allMultiple}}</span>倍，-->
+          投注<span>{{Common.addDotToNumber(viewsNumberFamily.allBetAmount,2)}}元</span>
+        </div>
+        <div class="money">
+          可用余额<span>{{Common.addDotToNumber(balance,4)}}</span><span>元</span>
+        </div>
+        <div class="footer" ng-click="isBetCommit()" ng-class="{'dis':betZoneData.length == 0}">确认投注</div>
+    </div>
+  </ion-view>
+

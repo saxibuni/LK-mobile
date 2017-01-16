@@ -1,0 +1,21 @@
+<ul class="listUL listUL7">
+  <li class="ballContent">
+    <div class="listTop">
+      <div class="ballNumber">
+        <span>{{playName}}</span>
+      </div>
+    </div>
+    <div class="ListBottom">
+      <ul class="list7">
+        <li>
+          <i class="b-dice-1" ng-class="{'b-dice-1-active':betRuleInstance.result[0].indexOf('1') >= 0}" ng-click="selectBall('1')"></i>
+          <i class="b-dice-2" ng-class="{'b-dice-2-active':betRuleInstance.result[0].indexOf('2') >= 0}" ng-click="selectBall('2')"></i>
+          <i class="b-dice-3" ng-class="{'b-dice-3-active':betRuleInstance.result[0].indexOf('3') >= 0}" ng-click="selectBall('3')"></i>
+          <i class="b-dice-4" ng-class="{'b-dice-4-active':betRuleInstance.result[0].indexOf('4') >= 0}" ng-click="selectBall('4')"></i>
+          <i class="b-dice-5" ng-class="{'b-dice-5-active':betRuleInstance.result[0].indexOf('5') >= 0}" ng-click="selectBall('5')"></i>
+          <i class="b-dice-6" ng-class="{'b-dice-6-active':betRuleInstance.result[0].indexOf('6') >= 0}" ng-click="selectBall('6')"></i>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,83 @@
+#betResult{
+  .betResult_market{
+    div{
+      background: #fafafa;
+      padding: 0 1.2rem;
+      border-bottom: 1px solid #e4e4e4;
+      p{
+        font-size: 1.333rem;
+        line-height: 4.5rem;
+      }
+      .success{
+        color:#34b257;
+      }
+      .fault{
+        color:#e83248;
+      }
+    }
+    li{
+      padding: 0px 1.2rem;
+      border-bottom: 1px solid #e4e4e4;
+      p{
+        line-height: 3.6rem;
+        font-size:1.08333rem ;
+        color: #3a3a3a;
+        span{
+          float: right;
+          color: #878787;
+        }
+        em{
+          color: #354eac;
+          float: right;
+        }
+      }
+    }
+  }
+  .betResult_operation{
+    background: #fafafa;
+    span{
+      display: inline-block;
+      border: 1px solid #656565;
+      font-size: 0.91666rem;
+      color: #656565;
+      border-radius: 2px;
+    }
+    .onthis{
+      color: #e83248;
+      border-color:#e83248;
+    }
+  }
+}
+
+#betResult_bottom{
+  height: 3.75rem;
+  background: #fafafa;
+  border-top: 1px solid #e4e4e4;
+  padding: 0;
+  .betResult_operation{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-bottom:0.8rem;
+    .queryResult,.betContinue{
+      cursor: pointer;
+      display: inline-block;
+      border: 1px solid #656565;
+      font-size: 0.91666rem;
+      color: #656565;
+      border-radius: 4px;
+      width: 30%;
+      margin-left: 13%;
+      text-align: center;
+      height: 1.8rem;
+      line-height: 1.8rem;
+      &.active,
+      &.activated {
+        color: #e83248;
+        border-color:#e83248;
+      }
+    }
+  }
+}
+
+

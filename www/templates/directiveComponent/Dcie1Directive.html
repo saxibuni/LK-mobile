@@ -1,0 +1,23 @@
+<ul class="listUL">
+  <li class="ballContent">
+    <div class="listTop">
+      <div class="ballNumber">
+        <span>{{playName}}</span>
+      </div>
+    </div>
+    <div class="ListBottom">
+      <ul class="list7">
+        <li ng-repeat="ball in  ballList track by $index"  ng-click="selectBall(ball)">
+          <div ng-repeat="dice in ball.split('') track by $index" class="listBall">
+            <i class="b-dice-1" ng-class="{'b-dice-1-active':betRuleInstance.result[0].indexOf(ball.toString()) >= 0}" ng-if="dice == '1'"></i>
+            <i class="b-dice-2" ng-class="{'b-dice-2-active':betRuleInstance.result[0].indexOf(ball.toString()) >= 0}" ng-if="dice == '2'"></i>
+            <i class="b-dice-3" ng-class="{'b-dice-3-active':betRuleInstance.result[0].indexOf(ball.toString()) >= 0}" ng-if="dice == '3'"></i>
+            <i class="b-dice-4" ng-class="{'b-dice-4-active':betRuleInstance.result[0].indexOf(ball.toString()) >= 0}" ng-if="dice == '4'"></i>
+            <i class="b-dice-5" ng-class="{'b-dice-5-active':betRuleInstance.result[0].indexOf(ball.toString()) >= 0}" ng-if="dice == '5'"></i>
+            <i class="b-dice-6" ng-class="{'b-dice-6-active':betRuleInstance.result[0].indexOf(ball.toString()) >= 0}" ng-if="dice == '6'"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>

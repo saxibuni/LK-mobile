@@ -1,0 +1,29 @@
+<ion-view>
+  <ion-header-bar class="bar-dark" id="mainHead">
+      <h1 class="title">IM彩票</h1>
+  </ion-header-bar>
+  <ion-content id="mainContent">
+      <ul id="drawList">
+          <li ng-if="!list.drawData.marketClosed" ng-repeat="list in marketList"  market="{{list.market}}" gameCode="{{list.gameCode}}" betType="{{list.betType}}">
+              <a ng-click="goBet(list)"  style="background-image: url({{list.imgUrl}})">
+                <div>
+                  <p class="market">{{list.marketCNName}}</p>
+                  <p class="draw">第{{list.drawData.drawNumber || 0}}期
+                    <em>投注截止&nbsp;{{list.timeLeft}}</em>
+                  </p>
+                </div>
+              </a>
+          </li>
+         <li ng-if="list.drawData.marketClosed" ng-repeat="list in marketList" class="liDisabled" market="{{list.market}}" gameCode="{{list.gameCode}}" betType="{{list.betType}}">
+          <a ng-click="marketClose(list)"  style="background-image: url({{list.imgUrl}})">
+            <div>
+              <p class="market">{{list.marketCNName}}</p>
+              <p class="draw">第{{list.drawData.drawNumber || 0}}期
+                <em>投注截止&nbsp;{{list.timeLeft}}</em>
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+  </ion-content>
+</ion-view>

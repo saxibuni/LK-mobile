@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-header-bar class="bar-dark" id="mainHead">
+    <a class="backA button button-clear ion-chevron-left" ng-click="goBack()"></a>
+    <h1 class="title">玩法说明</h1>
+  </ion-header-bar>
+  <ion-content id="mainContent">
+    <div id="playDesc">
+        <div class="playDesc_top">
+          <img ng-src="{{imgUrl}}"/>
+          <p class="market">{{marketCNName}}</p>
+        </div>
+        <div class="playDesc_time">
+          <span class="red">销售时间:&emsp;</span>
+          {{saleRule}}
+        </div>
+        <ul>
+          <li ng-repeat="item in allDesc">
+            <div class="playDesc_betType">
+              {{item.name}}
+            </div>
+            <div class="playDesc_betType_desc">
+             {{item.winningRule}}
+            </div>
+          </li>
+
+        </ul>
+
+    </div>
+  </ion-content>
+</ion-view>
+

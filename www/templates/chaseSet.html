@@ -1,0 +1,90 @@
+<ion-view>
+  <ion-header-bar class="bar-dark" id="mainHead">
+    <a class="backA button button-clear ion-chevron-left" href="#/chasePlan"></a>
+    <h1 class="title">追号设置</h1>
+  </ion-header-bar>
+
+  <ion-content id="mainContent" style="background: #ffffff;">
+    <!--<div id="chaseSet">
+      <div ng-click="goChaseAbout('profits')">利润追号</div>
+      <div ng-click="goChaseAbout('same')">同倍追号</div>
+      <div ng-click="goChaseAbout('double')">翻倍追号</div>
+    </div>-->
+    <div id="chaseSet">
+
+      <div class="parameterSet">基本参数</div>
+      <ul class="parameterList">
+        <li>
+          <div class="li_div">
+            <em>追号期数</em>
+            <p class="numToggle"><a class="minus ion-minus" ng-click="changePeriods('remove','periods')" ></a>
+              <input ng-model="betPlan.periods" ng-keyup="clearNoNum('periods')"/>
+              <a class="plus ion-plus" ng-click="changePeriods('add','periods')"></a></p>
+          </div>
+        </li>
+        <li>
+          <div class="li_div">
+            <em>起始倍数</em>
+            <p class="numToggle"><a class="minus ion-minus"  ng-click="changeCount('remove','startMultiple')"></a>
+              <input ng-model="betPlan.startMultiple" ng-keyup="clearNoNum('startMultiple')"/>
+              <a class="plus ion-plus" ng-click="changeCount('add','startMultiple')"></a></p>
+          </div>
+        </li>
+        <li>
+          <div class="li_div">
+            <em>追号即停</em>
+            <label class="label_toggle toggle">
+              <input type="checkbox" ng-model="betPlan.stopUtilWin">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </li>
+      </ul>
+
+      <div class="parameterSet">高级参数</div>
+
+      <ul class="parameterList">
+        <li>
+            <div class="li_div" ng-click="changeBetPlan('1')">
+              <em>利润追号</em>
+              <ion-radio class="radioCheck" ng-model="betPlan.type" ng-value="1">
+              </ion-radio>
+              <p class="p_profits">
+                <span>最低收益率</span>
+                <input class="inputJust" ng-model="betPlan.interest1" ng-keyup="clearNoNum('interest1')"/>
+                <span>%</span>
+              </p>
+            </div>
+        </li>
+        <li>
+          <div class="li_div" ng-click="changeBetPlan('2')">
+            <em>同倍追号</em>
+            <ion-radio class="radioCheck" ng-model="betPlan.type" ng-value="2">
+            </ion-radio>
+          </div>
+        </li>
+        <li>
+          <div class="li_div" ng-click="changeBetPlan('3')">
+              <em>翻倍追号</em>
+              <ion-radio class="radioCheck" ng-model="betPlan.type" ng-value="3">
+              </ion-radio>
+              <p class="p_dobule">
+                <span>每隔</span>
+                <input class="inputJust" ng-model="betPlan.interval3" ng-keyup="clearNoNum('interest3')"/>
+                <span>期,</span>
+                <span>倍数</span>
+                <input class="inputJust" ng-model="betPlan.multiple3" ng-keyup="clearNoNum('multiple3')"/>
+                <span>倍</span>
+              </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+  <ion-footer-bar>
+    <div class="chaseSet_bottom" ng-click="goPlan()">生成追号计划</div>
+  </ion-footer-bar>
+
+</ion-view>

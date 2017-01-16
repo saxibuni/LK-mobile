@@ -1,0 +1,103 @@
+
+#chaseHaute{
+  .chaseHaute_top{
+    text-align: center;
+    border-bottom: 1px solid #e4e4e4;
+    padding:0.416666rem 0px;
+    .chaseHaute_top_issue{
+      font-size: 1.25rem;
+      color: #6879b5;
+    }
+    .chaseHaute_top_stop{
+      font-size:0.91666rem;
+      color: #a5a8b5;
+      margin:0.42rem 0px;
+    }
+    .chaseHaute_top_end{
+      font-size:0.91666rem;
+      color: #e73247;
+    }
+  }
+  .chaseHaute_tab{
+    width:100%;
+    tr{
+      border-bottom: 1px solid #e4e4e4;
+      th{
+        font-size: 1rem;
+        color:#3a3a3a;
+        background: #fafafa;
+        line-height: 2rem;
+      }
+      td{
+        font-size: 0.8333rem;
+        color: #888888;
+        line-height: 2.5rem;
+        text-align: center;
+        height: 2.5rem;
+        label{
+          padding-left: 0;
+          border: none;
+          .checkbox{
+            left: 2px;
+            margin-top: -0.84rem;
+          }
+        }
+      }
+      .chaseHaute_tab_option{
+        label{
+          border: 0;
+          border-collapse: initial;
+          background: none;
+          width: 2.5rem;
+          height: 2.5rem;
+          padding-top: 1.2rem;
+          padding-left: 0.6rem;
+          input{
+            width: 1.4rem !important;
+            height: 1.4rem !important;
+          }
+          input:after{
+            top: 0.5rem !important;
+            width: 0.7rem !important;
+            height: 0.3rem !important;
+            left: 0.4rem !important;
+          }
+        }
+      }
+      td:nth-child(5){
+        color:#6879b5;
+       }
+    }
+  }
+}
+#chaseHaute_bottom{
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  border-top: 1px solid #e4e4e4;
+  background: #fff;
+  .calculateSum,.calculateBalance{
+    font-size: 0.91666rem;
+    margin:0.41666rem;
+    color: #000000;
+    span{
+      color:#6879b5;
+    }
+    em{
+      color:#e73247;
+    }
+  }
+  .betSure{
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+    height: 2.583333rem;
+    line-height: 2.583333rem;
+    background: #e73247;
+    cursor: pointer;
+  }
+
+
+
+}

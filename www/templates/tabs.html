@@ -1,0 +1,25 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<
+  <ion-tabs id="mainFoot" class="tabs-icon-top tabs-color-active-positive">
+    <!-- Dashboard Tab -->
+    <ion-tab class="mainFoot ion_tabs_icon" title="彩票娱乐" icon-on="tabs_LotteryFun_on" icon-off="tabs_LotteryFun_off" href="#/tab/LotteryFun">
+      <ion-nav-view name="tab-LotteryFun" nav-direction="forward"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Chats Tab -->
+    <ion-tab class="mainFoot ion_tabs_icon" title="开奖走势" icon-on="tabs_trends_on" icon-off="tabs_trends_off" href="#/tab/trends">
+      <ion-nav-view name="tab-trends" nav-direction="forward"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Account Tab -->
+    <ion-tab class="mainFoot ion_tabs_icon" title="我的详情" icon-on="tabs_myDetail_on" icon-off="tabs_myDetail_off" href="#/tab/myDetail">
+      <ion-nav-view name="tab-myDetail" nav-direction="forward"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+
+
+
